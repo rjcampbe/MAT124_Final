@@ -7,25 +7,49 @@ bibliography: finalref.bib
 ---
 
 ```{r, echo=FALSE, eval=FALSE}
-# setwd("I:/My Drive/Spring 2022/MAT 124/final")
+# setwd("I:/My Drive/Spring 2022/MAT 124/final/MAT124_Final")
 ```
 
-# Introduction {#intro}
+```{css, echo =FALSE}
 
-# Midterm 1: Compartment Model Analysis {#mt1}
+h1.title {
+  font-size: 38px;
+  color: SteelBlue;
+  text-align: center;
+}
+h4.author { 
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  text-align: center;
+}
+h4.date { 
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  text-align: center;
+}
+</style>
+```
 
-## Introduction: Midterm 1 {#introMT1}
+# <span style="color: SteelBlue;"> Introduction </span>{#intro}
 
-## Results: Midterm 1 {#resMT1}
+# <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
 
-## Discussion: Midterm 1 {#discMT1}
+## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
 
-# Midterm 2: Evolutionary Analysis
+## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
 
-## Introduction: Midterm 2 {#introMT2}
+## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
 
-## Results: Midterm 2 {#resMT2}
+# <span style="color: SteelBlue;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
 
-## Discussion: Midterm 2 {#discMT2}
+## <span style="color: SteelBlue;"> Introduction: Midterm 2 </span> {#introMT2}
 
-# References
+## <span style="color: SteelBlue;"> Results: Midterm 2 </span> {#resMT2}
+
+## <span style="color: SteelBlue;"> Discussion: Midterm 2 </span> {#discMT2}
+
+# <span style="color: SteelBlue;"> Final: 3D Protein Structure </span>
+
+# <span style="color: SteelBlue;"> References </span>
