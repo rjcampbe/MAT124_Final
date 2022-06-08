@@ -8,3 +8,5 @@
 
 
 # Riley's Resources
+1. [chimera user guide](https://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/frametut.html)
+2. [mecl uniprot page](https://www.uniprot.org/uniprot/P68262#sequences)
