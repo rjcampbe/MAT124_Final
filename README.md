@@ -12,3 +12,6 @@
 1. [chimera user guide](https://www.cgl.ucsf.edu/chimera/current/docs/UsersGuide/frametut.html)
 2. [mecI uniprot page](https://www.uniprot.org/uniprot/P68262#sequences)
 3. [The distribution of mecA, mecR1 and mecI and sequence analysis of mecI and the mec promoter region in staphylococci expressing resistance to methicillin](https://academic.oup.com/jac/article/43/1/15/749945)
+4. [Structure of the MecI repressor](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2222568/)
+5. [MecI represses synthesis from the β-lactamase operon](https://academic.oup.com/jac/article/45/2/139/727952)
+6. [Alphafold2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb#scrollTo=kOblAo-xetgx)
