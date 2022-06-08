@@ -34,7 +34,7 @@ h4.date {
 
 # <span style="color: SteelBlue;"> Introduction </span>{#intro}
 
-
+You have probably heard of a "Staph Infection", but why is this seemingly common bacterial skin infection becoming a much bigger deal? The simple answer is that the bacteria which causes these skin infections, *Staphylococcus aureus*, has been evolving to develop resistance against the antibiotics which are used to treat it. [@whatsMRSA]
 
 # <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
 
