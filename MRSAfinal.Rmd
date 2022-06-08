@@ -34,22 +34,43 @@ h4.date {
 
 # <span style="color: SteelBlue;"> Introduction </span>{#intro}
 
+
+
 # <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
+
+
 
 ## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
 
+
+
 ## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
+
+
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
 
+
+
 # <span style="color: SteelBlue;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
+
+
 
 ## <span style="color: SteelBlue;"> Introduction: Midterm 2 </span> {#introMT2}
 
+
+
 ## <span style="color: SteelBlue;"> Results: Midterm 2 </span> {#resMT2}
+
+
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 2 </span> {#discMT2}
 
+
+
 # <span style="color: SteelBlue;"> Final: 3D Protein Structure </span>
 
+
+
 # <span style="color: SteelBlue;"> References </span>
+
