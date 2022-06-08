@@ -40,3 +40,7 @@ vignettes/*.pdf
 
 # ignore all html files
 *.html
+
+# ignore MacOS Directory file info
+.DS_Store
+.Ds
