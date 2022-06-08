@@ -34,7 +34,7 @@ h4.date {
 
 # <span style="color: SteelBlue;"> Introduction </span>{#intro}
 
-You have probably heard of a "Staph Infection", but why is this seemingly common bacterial skin infection becoming a much bigger deal? The simple answer is that the bacteria which causes these skin infections, *Staphylococcus aureus*, has been evolving to develop resistance against the antibiotics which are used to treat it. [@whatsMRSA]
+You have probably heard of a "Staph Infection", but why is this seemingly common bacterial skin infection becoming a much bigger deal? The simple answer is that the bacteria which causes these skin infections, *Staphylococcus aureus*, has been evolving to develop resistance against the antibiotics which are used to treat it. [@whatsMRSA] This new distinct type of *S. aureus* has been deemed Methicillin-resistant *Staphylococcus aureus*, commonly referred to as MRSA. MRSA first started appearing in healthcare settings, where it caused mortality for hospitalized individuals. However, in the early 1990's a biologically distinct type of MRSA began breaking out in the the greater community, causing severe infections and even mortality among individuals who did not exhibit ill health or risk factors associated with early death. [@LAjail]
 
 # <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
 
