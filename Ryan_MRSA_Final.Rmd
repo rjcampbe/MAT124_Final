@@ -2,29 +2,74 @@
 title: "Ryan_MRSA_Final"
 author: "Ryan Campbell"
 date: '2022-06-08'
-output: html_document
+output: bookdown::html_document2
+bibliography: finalref.bib
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo=FALSE, eval=FALSE}
+# setwd(/Users/ryancampbell/Documents/GitHub/MAT124_Final")
 ```
 
-## R Markdown
+```{css, echo =FALSE}
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+h1.title {
+  font-size: 38px;
+  color: SteelBlue;
+  text-align: center;
+}
+h4.author { 
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  text-align: center;
+}
+h4.date { 
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+  text-align: center;
+}
+</style>
 ```
 
-## Including Plots
+# <span style="color: SteelBlue;"> Introduction </span>{#intro}
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
+
+
+
+## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
+
+
+
+## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
+
+
+
+## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
+
+
+
+# <span style="color: SteelBlue;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
+
+
+
+## <span style="color: SteelBlue;"> Introduction: Midterm 2 </span> {#introMT2}
+
+
+
+## <span style="color: SteelBlue;"> Results: Midterm 2 </span> {#resMT2}
+
+
+
+## <span style="color: SteelBlue;"> Discussion: Midterm 2 </span> {#discMT2}
+
+
+
+# <span style="color: SteelBlue;"> Final: 3D Protein Structure </span>
+
+
+
+# <span style="color: SteelBlue;"> References </span>
