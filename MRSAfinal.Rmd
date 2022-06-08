@@ -1,0 +1,31 @@
+---
+title: "Term Project"
+author: "Riley Adams"
+date: "9th July, 2022"
+output: bookdown::html_document2
+bibliography: finalref.bib
+---
+
+```{r, echo=FALSE, eval=FALSE}
+# setwd("I:/My Drive/Spring 2022/MAT 124/final")
+```
+
+# Introduction {#intro}
+
+# Midterm 1: Compartment Model Analysis {#mt1}
+
+## Introduction: Midterm 1 {#introMT1}
+
+## Results: Midterm 1 {#resMT1}
+
+## Discussion: Midterm 1 {#discMT1}
+
+# Midterm 2: Evolutionary Analysis
+
+## Introduction: Midterm 2 {#introMT2}
+
+## Results: Midterm 2 {#resMT2}
+
+## Discussion: Midterm 2 {#discMT2}
+
+# References
