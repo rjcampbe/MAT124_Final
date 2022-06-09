@@ -83,19 +83,22 @@ knitr::include_graphics(c("figures/RnaughtHistMale.png", "figures/RnaughtHistFem
 **ODE45:** Aditya Kurkut implemented the ODE45 function in the MATLAB software to integrate the differential equations in the model. To do so he input the Differential Equations, a range of time and some initial values which we deemed reasonable estimations. The results are depicted in Figure \@ref(fig:ode45).
 
 
-```{r ode45, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+```{r ode45, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image by Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
 knitr::include_graphics("figures/ode45.png")
 ```
 
-**Runge-Kutta:** Ryan Campbell used the Runge-Kutta method to approximate a solution curve for each differential equation. In doing so, a recursive, step-wise process was applied to some reasonable initial conditions for the model. The iterations of this process were made possible by the code Campbell produced in the MATLAB software using a "for loop" over 8 iterations, to represent the time steps at each month of the 8 month long study. The process was carried out seperately for male and female inmates. The results are depicted in Figure 
+**Runge-Kutta:** Ryan Campbell used the Runge-Kutta method to approximate a solution curve for each differential equation. In doing so, a recursive, step-wise process was applied to some reasonable initial conditions for the model. The iterations of this process were made possible by the code Campbell produced in the MATLAB software using a "for loop" over 8 iterations, to represent the time steps at each month of the 9 month long study. The process was carried out seperately for male and female inmates. The results are depicted in Figure \@ref(fig:rungeM) and Figure \@ref(fig:rungeF). 
 
-```{r rungeM, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
-knitr::include_graphics("figures/ode45.png")
+```{r rungeM, fig.align='center', fig.cap="Runge-Kutta Numerical Method for Approximating Solution Curves | Male Inmates (image by Ryan Campbell)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/rungeMale.png")
+```
+```{r rungeF, fig.align='center', fig.cap="Runge-Kutta Numerical Method for Approximating Solution Curves | Female Inmates (image by Ryan Campbell)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/rungeFemale.png")
 ```
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
 
-
+The differential equations model and the numerical methods we used to analyze it in Midterm 1 helped us understand how CA-MRSA spreads in susceptible populations. Our $R_0$ analysis indicated how varying values of the parameters in the model can effect the MRSA's ability to reproduce and spread. These parameters could be closely examined to determine which ones we can affect to curb the spread, and inform policy at institutions like correctional facilities. We saw in Ryan Campbell's Runge-Kutta analysis that differing initial conditions can lead to drastically different outcomes, thus further scrutiny of this model and the behavior of MRSA can inform onboarding processes to correctional facilities to minimize introduction of this pathogen into the system. In the same vain, the jail is not a closed system. The average term is short and individuals are released back to the community in one of the 3 compartments of the model. Meaning jails can be a source population for MRSA into the larger population. This study can highlight for the public, an awareness that it is important to consider the conditions (crowding, hygeine, etc.) and standards of living for those in our society who are imprisoned because it has an effect on the health of the greater society.
 
 # <span style="color: SteelBlue;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
 
