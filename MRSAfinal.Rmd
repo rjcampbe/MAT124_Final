@@ -52,6 +52,18 @@ knitr::include_graphics("figures/compartment.png")
 
 ## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
 
+**$R_0$ Analysis:** We used the methods developed by @R0 to thoroughly derive, and successfully reproduce the equation for the basic reproduction number of this model as found by @LAjail as shown in Equation \@ref(eq:rnaught). We also explored an alternate method for deriving $R_0$ which lends itself to a convenient biological interpretation. We looked at the three possible ways individuals in the jail population could exit the Colonized compartment of the model, and then multiplied each by how many inmates will take this route. In this sense, each route out of the Colonized class had its own $R_0$ value, and the overall reproduction number was the weighted average of the three. As in Equation \@ref(eq:average)
+
+\begin{equation}
+  R_0=\frac{c\beta_C + (\rho \phi c \beta_I)/ S}{\alpha + \rho \phi + \delta}
+  (\#eq:rnaught)
+\end{equation}
+
+\begin{align}
+  R_0 &= q_1 R_0^1 + q_2 R_0^2 +  q_3 R_0^3 \\
+  &= (\frac{\alpha}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta})+(\frac{\delta}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta})+(\frac{p\phi}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta} + \frac{c\beta_I}{\delta})
+  (\#eq:average)
+\end{align}
 
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
