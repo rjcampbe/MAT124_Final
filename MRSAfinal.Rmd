@@ -104,18 +104,50 @@ The differential equations model and the numerical methods we used to analyze it
 
 ## <span style="color: SteelBlue;"> Introduction: Midterm 2 </span> {#introMT2}
 
-
+For Midterm 2 [@mt2], we examined the evolution of ST8 *S. aureus*. We implemented Multiple Sequence Alignment of the DNA, Phylogenetic Tree Analysis and Topological Data Analysis. In doing so, we attempted (with some success) to recreate results from a study titled "Origin, evolution, and global transmission of community-acquired Staphylococcus aureus ST8" by @mt2Main. By following the evolution of ST8 *S. aureus* we can track its origins in Denmark and see how it branched out and spread through massive immigration events and World Wars into the United States where it circulated and underwent mutations which gave the bacteria its resistance to Methicillin. From the United States, this new highly virulent strain has been exported globally. It has even branched into two distinct main types known as USA300-NAE (North American Epidemic) and USA300-SAE (South American Epidemic), which are now circulating heavily as far as Africa, and Australia. [@mt2Main]
 
 ## <span style="color: SteelBlue;"> Results: Midterm 2 </span> {#resMT2}
 
+To analyze the phylogeny of ST8 *S. aureus*, we used the data studied by @mt2Main, which contained 224 samples from the DNA of different ST8 *S. aureus* strains. Since @mt2Main had already aligned the sequences against the chromosome of the *S. aureus* TCH1516 ST8 reference genome, using the Burrows-Wheeler Aligner, we did not get a chance to actually perform the sequence alignment ourselves. Although, I ran the `AlignSeq()` function from the R software package "DECIPHER" anyways, because it was a necessary step in our code. This did not have any effect of the positioning of our already aligned DNA sequences. Using The R software, guidance from the github repository authored by @github and various packages which can be found in the appendix of @mt2, I first computed a distance matrix of the pairwise distance between each of the 224 sequences as visualized in Figure \@ref(fig:dist)
 
+```{r dist, fig.cap='Distance Matrix: darker grey is more distant', echo=FALSE,warning=FALSE,out.width='100%',out.height='100%'}
+knitr::include_graphics("figures/dist.png")
+```
+
+I then implemented the tree estimation method created by @snei known as "Neighbor-Joining". This was performed using the `ape::nj()` function in R, but the *neighbor-joining matrix* $D^*$ is defined as the matrix which, given an $n \times n$ distance matrix $D$, is
+
+$$ D^*_{i,j} = (n-2)\cdot D_{i,j} - TotalDistance_D(i) - TotalDistance_D(j) $$,
+where $TotalDistance_D(i)$ is the sum of distances from $i$ to all other leaves.
+
+This matrix $D^*$ was then run through various plotting functions to produces the horizontal phylogram in Figure \@ref(fig:phyloHoriz) and circular phylogram in Figure \@ref(fig:phyloCircle). The phylograms were not an exact match to those produced by @mt2Main, however, they were quite similar. Both phylogenies had the highly virulent USA300 strain peppered throughout. Further, Denmark strains remaine near the root. Two distinct African clades were apparent, and one had close relation between Gabon and Nigeria strains with USA300 as a recent ancestor. We also had distinctly North American and South American clusters, depicting the 2 main USA300 epidemic types (NAE and SAE).
+
+```{r phyloHoriz, fig.cap='Phylogram', echo=FALSE,warning=FALSE,out.width='100%',out.height='100%'}
+knitr::include_graphics("figures/phyloHoriz.png")
+```
+```{r phyloCircle, fig.cap='Phylogram', echo=FALSE,warning=FALSE,out.width='100%',out.height='100%'}
+knitr::include_graphics("figures/phyloCircle.png")
+```
+
+Next, Ryan Campbell performed Topological Data Analysis on the same data set to gain further insight on the ancestral paths of ST8. This analysis was also performed using the R software and the same distance matrix visualized in Figure \@ref(fig:dist), this time using the "TDAstats" package with `calculateHomology()` function. Ryan set the dimensions to $1$, threshold to $-1$, format to 'distmat' and standardization to 'FALSE', which gave us the calculated homologies of the 224 strains of ST8. From there, Campbell produced the plots in Figure \@ref(fig:TDAplots). The left plot is the barcode plot which is varified by the same information in the persistence plot on the right. 
+
+```{r TDAplots, fig.cap='Barcode Plot (left) and persistance plot (right)', fig.show = 'hold', fig.align = 'center', echo=FALSE,warning=FALSE,out.width='49%',out.height='65%'}
+knitr::include_graphics(c("figures/TDAbarcode.png", "figures/TDApersist.png"))
+```
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 2 </span> {#discMT2}
 
+The analysis performed on the phylogeny of ST8 gave us insight into the history of this bacteria and how highly virulent CA-MRSA has risen to global prominence. Our phylogenetic tree illustrates how USA300 has given rise to many more antibiotic resistant strains of ST8 MRSA which are now circulating on other continents. The topological data further illustrates an acceleration in the mutation of CA-MRSA strains, particularly around the center of the graph where the "slope" is especially steep. As resistance to antibiotics becomes more and more prevelant, we will have to find new ways to treat infections caused by bacteria. Scrutiny should be placed on the allocation of antibiotics to avoid over using them and creating stronger resistance. Further, more research can be conducted into the mechanisms of the bacteria which cause its resistance to antibiotics. (We will examin one such mechanism in Section \@ref(final)). 
 
+In an exciting new frontier, @phage very recently published a study in which mycobacteriaphages we employed to successfully treat an infection in the lung of a male patient. These phages (essentially viruses for bacteria) were engineered in such a way as to more effectively lyse the *M. abcessus* causing the infection. Although this type of treatment has had varying success, with bacteria also developing restance to phages, [@phage] further research in this area could provide us with more tools to fight this epidemic of MRSA as the problem grows more severe.
 
 # <span style="color: SteelBlue;"> Final: 3D Protein Structure </span> {#final}
 
+```{r mecPics, fig.cap='Structure of the repressor protein encoded by the mecI gene', fig.show = 'hold', fig.align = 'center', echo=FALSE, warning=FALSE, out.width='49%', out.height='65%'}
+knitr::include_graphics(c("RileysProjectFiles/proteinPics/mecI_1.png", "RileysProjectFiles/proteinPics/mecI_2.png"))
+```
+```{r fancymec, fig.cap='Structure of the repressor protein encoded by the mecI gene', fig.show = 'hold', fig.align = 'center', echo=FALSE, warning=FALSE, out.width='49%', out.height='65%'}
+knitr::include_graphics(c("RileysProjectFiles/proteinPics/mecI_3.png", "RileysProjectFiles/proteinPics/mecI_4.png","RileysProjectFiles/proteinPics/mecI_5.png"))
+```
 
 
 # <span style="color: SteelBlue;"> References </span>
