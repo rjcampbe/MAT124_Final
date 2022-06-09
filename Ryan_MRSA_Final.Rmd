@@ -14,7 +14,7 @@ bibliography: finalref.bib
 
 h1.title {
   font-size: 38px;
-  color: SteelBlue;
+  color: DarkOliveGreen;
   text-align: center;
 }
 h4.author { 
@@ -32,7 +32,7 @@ h4.date {
 </style>
 ```
 
-# <span style="color: SteelBlue;"> Introduction </span>{#intro}
+# <span style="color: DarkOliveGreen;"> Introduction </span>{#intro}
 In this paper, I review mathematical studies of methicillin-resistant *Staphylococcus aureus*, that Riley Adams, Aditya Kurkut and myself all studied through the course of the Spring 2022 quarter at University of California, Davis for the MAT 124 course. *Staphylococcus aureus* is a fairly well known bacteria since it is the cause of the commonly-known "staph infection", which is a type of skin infection. However, *Staphylococcus aureus* evolved to become resistant to a lot of $\beta$-lactam antibiotics which makes it particularly difficult to treat, and is known as methicillin resistant *Staphylococcus aureus* (MRSA) [@whatsMRSA]. MRSA originated in healthcare settings where it posed a particular threat for hospitalized individuals, since admitted patients are already sick and immunocompromised. However, during 1990's MRSA broke out into the greater community, causing severe infections and even death among individuals who were not immunocompromised and in most regards, healthy [@LAjail]. This public type of MRSA has been found to be biologically distinct, and so we distinguish between the two types of MRSA by referring to HA-MRSA (healthcare-associated MRSA), and CA-MRSA (community-associated MRSA). MRSA in and of itself is physically similar to *Staphylococcus aureus*, since it is still a gram-positive, non-spore forming type of spherical bacteria, which form grape-like clusters when viewed under a microscope.
 
 We focused on CA-MRSA for these projects, since the risk is generalized to the public. It should be noted that community members at highest risk of infection by MRSA are those in densely populated settings with many shared textiles or possibility of shared contact, or poor hygiene [@LAjail]. Densely populated settings such as correctional facilities, homeless populations, or military barracks are at risk as well as settings such as a high-contact sports team, day cares and other similar populations. CA-MRSA has been spreading with increasing intensity across the globe, evolving and becoming more difficult to treat with the passing of time. [@mt2Main] 
@@ -42,42 +42,42 @@ To first get an understanding on the spread of CA-MRSA, we took a deep dive into
 As a further understanding of CA-MRSA, and MRSA in general, I studied the mecA gene of *S. aureus*, which is the gene sequence that creates the penicillin-binding protein, PBP 2a, which gives MRSA some of its methicillin-resistance characteristics [@mecAgene]. 
 
 
-# <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
+# <span style="color: DarkOliveGreen;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
 
 ```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell), model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/compartment.png")
 ```
 
-## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
+## <span style="color: DarkOliveGreen;"> Introduction: Midterm 1 </span> {#introMT1}
 
 
 
-## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
+## <span style="color: DarkOliveGreen;"> Results: Midterm 1 </span>{#resMT1}
 
 
 
-## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
+## <span style="color: DarkOliveGreen;"> Discussion: Midterm 1 </span> {#discMT1}
 
 
 
-# <span style="color: SteelBlue;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
+# <span style="color: DarkOliveGreen;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
 
 
 
-## <span style="color: SteelBlue;"> Introduction: Midterm 2 </span> {#introMT2}
+## <span style="color: DarkOliveGreen;"> Introduction: Midterm 2 </span> {#introMT2}
 
 
 
-## <span style="color: SteelBlue;"> Results: Midterm 2 </span> {#resMT2}
+## <span style="color: DarkOliveGreen;"> Results: Midterm 2 </span> {#resMT2}
 
 
 
-## <span style="color: SteelBlue;"> Discussion: Midterm 2 </span> {#discMT2}
+## <span style="color: DarkOliveGreen;"> Discussion: Midterm 2 </span> {#discMT2}
 
 
 
-# <span style="color: SteelBlue;"> Final: 3D Protein Structure </span>
+# <span style="color: DarkOliveGreen;"> Final: 3D Protein Structure </span>
 
 
 
-# <span style="color: SteelBlue;"> References </span>
+# <span style="color: DarkOliveGreen;"> References </span>
