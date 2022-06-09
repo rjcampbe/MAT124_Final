@@ -44,15 +44,19 @@ In an attempt to better understand this ever relevant pathogen, we took a deep d
 
 ## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
 
-For midterm 1 [@mt1], we followed a study called *Modelling an outbreak of an emerging pathogen* by @LAjail. This gave us a chance to examine one of those MRSA hotbeds mentioned in Section \@ref(intro), a jail. Not just any jail, but the largest jail in the *world*, the LA County Jail. [@LAjail] In the course of this study, Ryan evaluated the approximate solution curves of the differential equations shown in Figure \@ref(fig:compartment), using the Runge-Kutta Method. With some collaboration from Ryan and I, Aditya implemented the ODE45 Integration Technique. I derived the reproduction number $R_0$, using the methods published by @R0 and then simulated 1,000 sample values for $R_0$ based on pseudo-randomly varying parameter values. 
+For midterm 1 [@mt1], we followed a study called *Modelling an outbreak of an emerging pathogen* by @LAjail. This gave us a chance to examine one of those MRSA hotbeds mentioned in Section \@ref(intro), a jail. Not just any jail, but the largest jail in the world, the LA County Jail. [@LAjail] In the course of this study, Ryan evaluated the approximate solution curves of the differential equations shown in Figure \@ref(fig:compartment), using the Runge-Kutta Method. With some collaboration from Ryan and I, Aditya implemented the ODE45 Integration Technique. I derived the reproduction number $R_0$, using the methods published by @R0 and then simulated 1,000 sample values for $R_0$ based on pseudo-randomly varying parameter values. 
 
-```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell), model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
+```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell, model by Kajita, et al)', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/compartment.png")
+```
+
+```{r params,fig.align='center', fig.cap='Parameters (image by Riley Adams model by Kajita, et al)', echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/parameters.png")
 ```
 
 ## <span style="color: SteelBlue;"> Results: Midterm 1 </span>{#resMT1}
 
-**$R_0$ Analysis:** We used the methods developed by @R0 to thoroughly derive, and successfully reproduce the equation for the basic reproduction number of this model as found by @LAjail as shown in Equation \@ref(eq:rnaught). We also explored an alternate method for deriving $R_0$ which lends itself to a convenient biological interpretation. We looked at the three possible ways individuals in the jail population could exit the Colonized compartment of the model, and then multiplied each by how many inmates will take this route. In this sense, each route out of the Colonized class had its own $R_0$ value, and the overall reproduction number was the weighted average of the three. As in Equation \@ref(eq:average)
+**$R_0$ Analysis:** I used the methods developed by @R0 to thoroughly derive, and successfully reproduce the equation for the basic reproduction number of this model as found by @LAjail and shown in Equation \@ref(eq:rnaught). I also explored an alternate method for deriving $R_0$ which lends itself to a convenient biological interpretation. I looked at the three possible ways individuals in the jail population could exit the Colonized compartment of the model, and then multiplied each by how many inmates will take this route. In this sense, each route out of the Colonized class had its own $R_0$ value, and the overall reproduction number was the weighted average of the three. As in Equation \@ref(eq:average)
 
 \begin{equation}
   R_0=\frac{c\beta_C + (\rho \phi c \beta_I)/ S}{\alpha + \rho \phi + \delta}
@@ -65,6 +69,29 @@ knitr::include_graphics("figures/compartment.png")
   (\#eq:average)
 \end{align}
 
+I wrote code in R to collect $2,000$ pseudo-random samples ($1,000$ for male, $1,000$ for female) of values for each parameter in the $R_0$ equation. I used the ranges of values estimated by @LAjail, as depicted in Figure \@ref(fig:range). Then, I utilized Equation \@ref(eq:rnaught) to calculate $1000$ sample $R_0$ and conduct an analysis on the results. See Figure \@ref(fig:histograms). We discovered the mean $R_0$ for males was $3.27$, while the mean $R_0$ for females was $0.71$. The results for the females were very close to those achieved by @LAjail, while our mean for males was fairly higher.
+
+
+```{r range,fig.align='center', fig.cap='Estimated parameter Ranges (image by Adams and Kurkut, estimates by Kajita, et al)', echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/paramRange.png")
+```
+
+```{r histograms, fig.cap='Histograms for 1000 Randomly Generated R0 by Varying Parameter Values. Male Population (Left), Female Population (Right)', fig.show = 'hold', fig.align = 'center', echo=FALSE, warning=FALSE, out.width='49%', out.height='50%'}
+knitr::include_graphics(c("figures/RnaughtHistMale.png", "figures/RnaughtHistFemale.png"))
+```
+
+**ODE45:** Aditya Kurkut implemented the ODE45 function in the MATLAB software to integrate the differential equations in the model. To do so he input the Differential Equations, a range of time and some initial values which we deemed reasonable estimations. The results are depicted in Figure \@ref(fig:ode45).
+
+
+```{r ode45, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/ode45.png")
+```
+
+**Runge-Kutta:** Ryan Campbell used the Runge-Kutta method to approximate a solution curve for each differential equation. In doing so, a recursive, step-wise process was applied to some reasonable initial conditions for the model. The iterations of this process were made possible by the code Campbell produced in the MATLAB software using a "for loop" over 8 iterations, to represent the time steps at each month of the 8 month long study. The process was carried out seperately for male and female inmates. The results are depicted in Figure 
+
+```{r rungeM, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/ode45.png")
+```
 
 ## <span style="color: SteelBlue;"> Discussion: Midterm 1 </span> {#discMT1}
 
