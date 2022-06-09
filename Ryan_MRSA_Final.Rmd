@@ -1,7 +1,7 @@
 ---
-title: "Ryan_MRSA_Final"
+title: "MRSA Final Report"
 author: "Ryan Campbell"
-date: '2022-06-08'
+date: '2022-06-09'
 output: bookdown::html_document2
 bibliography: finalref.bib
 ---
@@ -33,12 +33,20 @@ h4.date {
 ```
 
 # <span style="color: SteelBlue;"> Introduction </span>{#intro}
+In this paper, I review mathematical studies of methicillin-resistant *Staphylococcus aureus*, that Riley Adams, Aditya Kurkut and myself all studied through the course of the Spring 2022 quarter at University of California, Davis for the MAT 124 course. *Staphylococcus aureus* is a fairly well known bacteria since it is the cause of the commonly-known "staph infection", which is a type of skin infection. However, *Staphylococcus aureus* evolved to become resistant to a lot of $\beta$-lactam antibiotics which makes it particularly difficult to treat, and is known as methicillin resistant *Staphylococcus aureus* (MRSA) [@whatsMRSA]. MRSA originated in healthcare settings where it posed a particular threat for hospitalized individuals, since admitted patients are already sick and immunocompromised. However, during 1990's MRSA broke out into the greater community, causing severe infections and even death among individuals who were not immunocompromised and in most regards, healthy [@LAjail]. This public type of MRSA has been found to be biologically distinct, and so we distinguish between the two types of MRSA by referring to HA-MRSA (healthcare-associated MRSA), and CA-MRSA (community-associated MRSA). MRSA in and of itself is physically similar to *Staphylococcus aureus*, since it is still a gram-positive, non-spore forming type of spherical bacteria, which form grape-like clusters when viewed under a microscope.
 
+We focused on CA-MRSA for these projects, since the risk is generalized to the public. It should be noted that community members at highest risk of infection by MRSA are those in densely populated settings with many shared textiles or possibility of shared contact, or poor hygiene [@LAjail]. Densely populated settings such as correctional facilities, homeless populations, or military barracks are at risk as well as settings such as a high-contact sports team, day cares and other similar populations. CA-MRSA has been spreading with increasing intensity across the globe, evolving and becoming more difficult to treat with the passing of time. [@mt2Main] 
+
+To first get an understanding on the spread of CA-MRSA, we took a deep dive into a mathematical model of its spread in a community. This was done in our Midterm 1 report (Section \@ref(mt1)) where we used a compartmental model and $R_0$ analysis to reproduce results from @LAjail. After we studied an example of its spread in a community, we researched the evolution of Sequence Type 8 (ST8) *S. aureus* from it's origin as a Methicillin-susceptible ancestor (MSSA) in Europe, to the hyper virulent MRSA strain we know it to be today, USA300. To do this, we followed and attempted to reproduce some of the results from @mt2Main as well as included a topological data analysis method we learned in our class. 
+
+As a further understanding of CA-MRSA, and MRSA in general, I studied the mecA gene of *S. aureus*, which is the gene sequence that creates the penicillin-binding protein, PBP 2a, which gives MRSA some of its methicillin-resistance characteristics [@mecAgene]. 
 
 
 # <span style="color: SteelBlue;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
 
-
+```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell), model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
+knitr::include_graphics("figures/compartment.png")
+```
 
 ## <span style="color: SteelBlue;"> Introduction: Midterm 1 </span> {#introMT1}
 
