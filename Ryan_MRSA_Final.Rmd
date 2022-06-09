@@ -29,6 +29,7 @@ h4.date {
   color: black;
   text-align: center;
 }
+
 </style>
 ```
 
@@ -43,6 +44,8 @@ As a further understanding of CA-MRSA, and MRSA in general, I studied the mecA g
 
 
 # <span style="color: DarkOliveGreen;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
+
+To start, we will examine the compartmental model, which categorized the inmates into 3 classes: Susceptible (no infection), Colonized (asymptomatic, contagious) and Infected (symptomatic infection) [@LAjail]. The study by @LAjail is important to help understand important contributing factors in the spreadof MRSA within LA County jail as well as the implications this may have for the outside community, since inmates only reside in the jail for an average of one month, they can leave while still contagious. The model also considers the dynamis of movement between compartments and into and out of the outside community. To study this, we reproduced the methods used in the study for calculating the disease reproductive number (R0), in greater detail using the method developed by @R0. Additionally, we also implemented the ODE45 function in MATLAB to integrate the three ordinary differential equations found in our compartmental model and the Runge-Kutta method to find potential solution curves of the population dynamics.
 
 ```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell), model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/compartment.png")
