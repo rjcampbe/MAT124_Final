@@ -36,7 +36,7 @@ h4.date {
 
 You have probably heard of a "Staph Infection", but why is this seemingly common bacterial skin infection becoming a much bigger deal? The simple answer is that the bacteria which causes these skin infections, *Staphylococcus aureus*, has been evolving to develop resistance against the antibiotics which are used to treat it. [@whatsMRSA] This new distinct type of *S. aureus* has been deemed Methicillin-resistant *Staphylococcus aureus*, commonly referred to as MRSA. MRSA first started appearing in healthcare settings, where it caused mortality for hospitalized individuals. However, in the early 1990's a biologically distinct type of MRSA began breaking out in the the greater community, causing severe infections and even mortality among individuals who did not exhibit ill health or risk factors associated with early death. [@LAjail] Thus, we now have two types of MRSA: HA-MRSA (healthcare-associated MRSA), and CA-MRSA (community-associated MRSA).
 
-For the studies I conducted along with Ryan Campbell and Aditya Kurkut, we took particular interest in CA-MRSA. Those community members who are at highest risk of infection by MRSA are those in densely populated settings with many shared textiles or possibility of shared contact. [@LAjail] This can include day cares, sports teams, correctional facilites, homeless populations, military barracks and other similar populations. CA-MRSA has been spreading with increasing intensity across the globe, evolving and becoming more difficult to treat with the passing of time. [@mt2Main] 
+For the studies I conducted along with Ryan Campbell and Aditya Kurkut, we took particular interest in CA-MRSA. Those community members who are at highest risk of infection by MRSA are those in densely populated settings with many shared textiles or possibility of close contact. [@LAjail] This can include day cares, sports teams, correctional facilites, homeless populations, military barracks and other similar populations. CA-MRSA has been spreading with increasing intensity across the globe, evolving and becoming more difficult to treat with the passing of time. [@mt2Main] 
 
 In an attempt to better understand this ever relevant pathogen, we took a deep dive into mathematically modeling its spread as well as its evolution. To this end, we broke our work into two midterms: Midterm 1 (Section \@ref(mt1)) where we use a compartment model and $R_0$ analysis to reproduce results from @LAjail, and Midterm 2 (Section \@ref(mt2)) where we followed the evolution of Sequence Type 8 (ST8) *S. aureus* on its evolutionary journey from a Methicillin-susceptible ancestor (MSSA) in Europe, to the hyper virulent MRSA strain, USA300, which is now spreading globally. For this second study we attempt to reproduce results from @mt2Main. In this paper, I will summarize our findings from the first two studies, as well as introduce a final study (Section \@ref(final)) on the mecI gene of *S. aureus*, which plays a significant role in the bacteria's resistance to Methicillin. [@repressor]
 
@@ -48,6 +48,10 @@ For midterm 1 [@mt1], we followed a study called *Modelling an outbreak of an em
 
 ```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell, model by Kajita, et al)', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/compartment.png")
+```
+
+```{r ODEs,fig.align='center', fig.cap='Ordinary Differential Equations for the Model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
+knitr::include_graphics("figures/ODEs.png")
 ```
 
 ```{r params,fig.align='center', fig.cap='Parameters (image by Riley Adams model by Kajita, et al)', echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
@@ -141,6 +145,8 @@ The analysis performed on the phylogeny of ST8 gave us insight into the history 
 In an exciting new frontier, @phage very recently published a study in which mycobacteriaphages we employed to successfully treat an infection in the lung of a male patient. These phages (essentially viruses for bacteria) were engineered in such a way as to more effectively lyse the *M. abcessus* causing the infection. Although this type of treatment has had varying success, with bacteria also developing restance to phages, [@phage] further research in this area could provide us with more tools to fight this epidemic of MRSA as the problem grows more severe.
 
 # <span style="color: SteelBlue;"> Final: 3D Protein Structure </span> {#final}
+
+For the final portion of this MRSA study I will obtain the 3D structure for the repressor protein encoded for by the mecI gene, and discuss the function and relevance of this protein to Methicillin Resistance in *S. aureus*.
 
 ```{r mecPics, fig.cap='Structure of the repressor protein encoded by the mecI gene', fig.show = 'hold', fig.align = 'center', echo=FALSE, warning=FALSE, out.width='49%', out.height='65%'}
 knitr::include_graphics(c("RileysProjectFiles/proteinPics/mecI_1.png", "RileysProjectFiles/proteinPics/mecI_2.png"))
