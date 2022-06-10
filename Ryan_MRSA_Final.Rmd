@@ -44,34 +44,71 @@ As a further understanding of CA-MRSA, and MRSA in general, I studied the mecA g
 
 
 # <span style="color: DarkOliveGreen;"> Midterm 1: Compartment Model Analysis </span> {#mt1}
+## <span style="color: DarkOliveGreen;"> Introduction: Midterm 1 </span> {#introMT1}
 
-To start, we will examine the compartmental model, which categorized the inmates into 3 classes: Susceptible (no infection), Colonized (asymptomatic, contagious) and Infected (symptomatic infection) [@LAjail]. The study by @LAjail is important to help understand important contributing factors in the spreadof MRSA within LA County jail as well as the implications this may have for the outside community, since inmates only reside in the jail for an average of one month, they can leave while still contagious. The model also considers the dynamis of movement between compartments and into and out of the outside community. To study this, we reproduced the methods used in the study for calculating the disease reproductive number (R0), in greater detail using the method developed by @R0. Additionally, we also implemented the ODE45 function in MATLAB to integrate the three ordinary differential equations found in our compartmental model, shown in figure \@ref(fig:compartment) and in figure \@ref(fig:ODEs) and the Runge-Kutta method to find potential solution curves of the population dynamics.
+To start, we will examine the compartmental model, which categorized the inmates into 3 classes: Susceptible (no infection), Colonized (asymptomatic, contagious) and Infected (symptomatic infection) [@LAjail]. The study by @LAjail is important to help understand important contributing factors in the spreadof MRSA within LA County jail as well as the implications this may have for the outside community, since inmates only reside in the jail for an average of one month, they can leave while still contagious. The model also considers the dynamis of movement between compartments and into and out of the outside community. To study this, we reproduced the methods used in the study for calculating the disease reproductive number (R0), in greater detail using the method developed by @R0. Additionally, we also implemented the ODE45 function in MATLAB to integrate the three ordinary differential equations found in our compartmental model, shown in figure \@ref(fig:compartment) and in figure \@ref(fig:ODEs) and the Runge-Kutta method to find potential solution curves of the population dynamics. We included a pretty thorough $R_0$ analysis as well, which was performed by using the methods published by @R0 and simulating 1,000 sample values for $R_0$ based on pseudo-randomly varying parameter values in figure \@ref(fig:parameters).  
 
 ```{r ODEs,fig.align='center', fig.cap='CA-MRSA: Ordinary Differential Equations as depicted in model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/ODEs.png")
 ```
 
-```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell), model by Kajita, et al', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
+```{r compartment,fig.align='center', fig.cap='CA-MRSA: compartment model (image by Ryan Campbell, model by Kajita, et al)', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
 knitr::include_graphics("figures/compartment.png")
 ```
 
-## <span style="color: DarkOliveGreen;"> Introduction: Midterm 1 </span> {#introMT1}
-
+```{r parameters,fig.align='center', fig.cap='Parameters (image by Riley Adams model by Kajita, et al)', echo=FALSE,warning=FALSE,out.width='60%',out.height='60%'}
+knitr::include_graphics("figures/parameters.png")
+```
 
 
 ## <span style="color: DarkOliveGreen;"> Results: Midterm 1 </span>{#resMT1}
 
+**ODE45:** For the most part, Aditya Kurkut worked on understanding and implementing the ODE45 function in the MATLAB software to integrate the differential equations in the model. We collaborated on the code he used since I was a bit more familiar with MATLAB syntax, but he studied it and wrote the code for the implementation of the technique. The ODE45 function required inputs of our Differential Equations, our parameters in \@ref(fig:parameters) some initial values which we deemed reasonable estimations. The results are depicted in Figure \@ref(fig:ode45).
 
+
+```{r ode45, fig.align='center', fig.cap="Solution Curve for the ODE's in the Model (image by Aditya Kurkut)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/ode45.png")
+```
+
+**Runge-Kutta:** I was the sole contributor to the Runge-Kutta method we implemented to approximate a solution curve for each differential equation. Notably, this was not a method detailed in @LAjail, but I used methods we covered in class and coded it in MATLAB. In doing so, I used an iterative process with some reasonable initial conditions and used "for loop" in MATLAB to approximate the value at each time step for each month of the 9 month long study detailed in @LAjail. I separated the code into two chunks, one for the analysis on female inmates and one for male inmates, since their parameter values and intiial conditions differed. The plotted results are shown in Figure \@ref(fig:rungeM) and Figure \@ref(fig:rungeF). 
+
+```{r rungeM, fig.align='center', fig.cap="Runge-Kutta Numerical Method for Approximating Solution Curves | Male Inmates (image by Ryan Campbell)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/rungeMale.png")
+```
+```{r rungeF, fig.align='center', fig.cap="Runge-Kutta Numerical Method for Approximating Solution Curves | Female Inmates (image by Ryan Campbell)", echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/rungeFemale.png")
+```
+
+**$R_0$ Analysis:** For the $R_0$ analysis, Riley referred to methods developed by @R0 to thoroughly derive, and successfully reproduce the equation for the basic reproduction number of this model as found by @LAjail and shown in Equation \@ref(eq:rnaught). He also took the initiative to explore an alternate method for deriving $R_0$ in order to find a relatively more intuitive biological interpretation. To do this, he observed there were only three possible ways individuals in the jail population could exit the Colonized compartment of the model, and then multiplied rate by how many inmates will take this route. For this reason, each route out of the Colonized class would have its own $R_0$ value, and the overall reproduction number was the weighted average of the three. We can see this weighted average in equation \@ref(eq:average),
+
+\begin{equation}
+  R_0=\frac{c\beta_C + (\rho \phi c \beta_I)/ S}{\alpha + \rho \phi + \delta}
+  (\#eq:rnaught)
+\end{equation}
+
+\begin{align}
+  R_0 &= q_1 R_0^1 + q_2 R_0^2 +  q_3 R_0^3 \\
+  &= (\frac{\alpha}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta})+(\frac{\delta}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta})+(\frac{p\phi}{\alpha + p\phi + \delta})(\frac{c\beta_C}{\alpha + p\phi + \delta} + \frac{c\beta_I}{\delta})
+  (\#eq:average)
+\end{align}
+
+Riley then wrote code in R to generate $1,000$ pseudo-random samples for each, male and female, to get values for each parameter used in the $R_0$ equation. To control the pseudo-random sampling, he restricted to ranges of values estimated by @LAjail, as depicted in Figure \@ref(fig:range). Then, he utilized Equation \@ref(eq:rnaught) to calculate $1000$ sample $R_0$ and plotted an analysis on the results, which we see in Figure \@ref(fig:histograms). From his work, he discovered the mean $R_0$ for males was $3.27$, while the mean $R_0$ for females was $0.71$. This result aligns well with the results achieved by @LAjail, although the mean $R_0$ for males was slightly larger. This could be an error in our pseudo-random sampling, since our sampled values may not precisely align with those sampled by @LAjail.
+
+```{r range,fig.align='center', fig.cap='Estimated parameter Ranges (image by Adams and Kurkut, estimates by Kajita, et al)', echo=FALSE, warning=FALSE, out.width='60%', out.height='50%'}
+knitr::include_graphics("figures/paramRange.png")
+```
+
+```{r histograms, fig.cap='Histograms for 1000 Randomly Generated R0 by Varying Parameter Values. Male Population (Left), Female Population (Right)', fig.show = 'hold', fig.align = 'center', echo=FALSE, warning=FALSE, out.width='49%', out.height='50%'}
+knitr::include_graphics(c("figures/RnaughtHistMale.png", "figures/RnaughtHistFemale.png"))
+```
 
 ## <span style="color: DarkOliveGreen;"> Discussion: Midterm 1 </span> {#discMT1}
 
-
+Through examining the 2007 study of a CA-MRSA outbreak in LA County Jail detailed in @LAjail, we discovered a bit about the dynamics of the spread of MRSA infections, through the ODE45 integration, Runge-Kutta approximations, and $R_0$ analysis. Our most notable results were our $R_0$ analysis and our application of the Runge-Kutta methods. These two methods got us to dive deeper into the population growth dynamics, since the Runge-Kutta method showed us how the dynamics of the three model compartments can play out with differing levels of initial conditions, and the $R_0$ analysis gave us a sense of the population growth factor. These results could influence changes to institutions in the inmate on-boarding process, and ensuring access to basic hygiene and clean textiles in order to reduce the spread of the disease. This extra level of control in the on-boarding can also reduce the number of individuals who may already be colonized or infected with CA-MRSA. At its greatest extent, they may want to implement a health screening procedure which includes testing of any wounds and a short quarantine to wait for test results to come back. This obviously may not be the most practical suggestion due to the high costs of testing and ensuring adequate space in quarantining individuals before they are released to the jail's population. This is mostly because we must realize that jails are not closed systems, especially county jails where individuals are entering and leaving at a relatively high frequency. In regards to CA-MRSA, individuals arrive at the jail in one of 3 compartments, and upon departure, individuals can leave in any of the 3 compartments as well. We want to ensure our correctional facilities are not essentially acting as distribution centers for MRSA infections in our communities. Simple changes to the policies that guide the intake process for inmates, regarding hygiene, access to clean clothing, and potentially even testing and quarantine periods can likely have a significant effect on the epidemiological condition of the outside community.
 
 # <span style="color: DarkOliveGreen;"> Midterm 2: Evolutionary Analysis </span> {#mt2}
-
-
-
 ## <span style="color: DarkOliveGreen;"> Introduction: Midterm 2 </span> {#introMT2}
+
 
 
 
